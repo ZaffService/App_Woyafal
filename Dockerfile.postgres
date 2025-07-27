@@ -1,0 +1,19 @@
+FROM postgres:15-alpine
+
+# Set environment variables for PostgreSQL
+ENV POSTGRES_DB=tafa
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=root123
+ENV PGDATA=/var/lib/postgresql/data/pgdata
+
+# Copiez le fichier SQL existant
+COPY script.sql /docker-entrypoint-initdb.d/01-init.sql
+
+# Create necessary directories
+RUN mkdir -p /var/lib/postgresql/data/pgdata
+
+# Expose PostgreSQL port
+EXPOSE 5432
+
+# Use the default postgres entrypoint
+CMD ["postgres"]

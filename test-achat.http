@@ -1,0 +1,8 @@
+POST http://localhost:8080/achat
+Content-Type: application/json
+
+{
+  "numero_compteur": "123456789",
+  "montant": 5000,
+  "localisation": "Dakar, Sénégal"
+}
