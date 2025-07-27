@@ -16,4 +16,4 @@ RUN composer install --no-dev --optimize-autoloader
 
 EXPOSE 8080
 
-CMD php migration.php && php seeder.php && php -S 0.0.0.0:10000 -t public
+CMD php migrations/Migration.php && php seeders/Seeder.php && php -S 0.0.0.0:10000 -t public
