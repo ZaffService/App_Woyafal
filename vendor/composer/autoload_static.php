@@ -33,15 +33,7 @@ class ComposerStaticInitd5c6677f836ac2d0b0b3ad4a0f137a10
         ),
         'A' => 
         array (
-            'App\\Src\\Enums\\' => 14,
-            'App\\Services\\' => 13,
-            'App\\Seeders\\' => 12,
             'App\\Router\\' => 11,
-            'App\\Repositories\\' => 17,
-            'App\\Migrations\\' => 15,
-            'App\\Entities\\' => 13,
-            'App\\Core\\' => 9,
-            'App\\Controllers\\' => 16,
             'App\\' => 4,
         ),
     );
@@ -71,45 +63,13 @@ class ComposerStaticInitd5c6677f836ac2d0b0b3ad4a0f137a10
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
-        'App\\Src\\Enums\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Enums',
-        ),
-        'App\\Services\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Services',
-        ),
-        'App\\Seeders\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/seeders',
-        ),
         'App\\Router\\' => 
         array (
             0 => __DIR__ . '/..' . '/mrsems/router-php/src',
         ),
-        'App\\Repositories\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Repositories',
-        ),
-        'App\\Migrations\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/migrations',
-        ),
-        'App\\Entities\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Entities',
-        ),
-        'App\\Core\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/App/Core',
-        ),
-        'App\\Controllers\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Controllers',
-        ),
         'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/App',
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 

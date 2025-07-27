@@ -118,7 +118,7 @@ class WoyofalService
             $this->clientRepository->updateSolde($client->getId(), $client->getSoldeMaxitsa());
 
             // Journaliser le succès
-            $this->journaliser($numeroCompteur, $ip, $localisation, 'success', SuccessEnum::ACHAT_SUCCESS, $codeRecharge, $calculTranche['kwh_total']);
+            $this->journaliser($numeroCompteur, $ip, $localisation, 'success', SuccessEnum::ACHAT_SUCCESS->value, $codeRecharge, $calculTranche['kwh_total']);
 
             return [
                 'success' => true,
