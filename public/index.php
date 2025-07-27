@@ -89,7 +89,7 @@ if (isset($_GET['run_migration']) && $_GET['run_migration'] === 'secret') {
 }
 
 if (isset($_GET['run_seeder']) && $_GET['run_seeder'] === 'secret') {
-    require_once __DIR__ . '/../seeder.php'; // adapte le chemin si besoin
+    require_once __DIR__ . '/../seeders/Seeder.php';
     echo "Seeder exécuté";
     exit;
 }
