@@ -67,23 +67,23 @@
         },
         {
             "name": "mrsems/router-php",
-            "version": "v1.0.1",
-            "version_normalized": "1.0.1.0",
+            "version": "v1.1.0",
+            "version_normalized": "1.1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/papesembene/RouterDependency.git",
-                "reference": "8ff58ab560f9ce9b8fb9bfd091f525cdee2e9b29"
+                "reference": "84ac4760c776cb4d46d0a7e4c8260e93b007fe3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/papesembene/RouterDependency/zipball/8ff58ab560f9ce9b8fb9bfd091f525cdee2e9b29",
-                "reference": "8ff58ab560f9ce9b8fb9bfd091f525cdee2e9b29",
+                "url": "https://api.github.com/repos/papesembene/RouterDependency/zipball/84ac4760c776cb4d46d0a7e4c8260e93b007fe3b",
+                "reference": "84ac4760c776cb4d46d0a7e4c8260e93b007fe3b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.4"
             },
-            "time": "2025-07-21T22:44:56+00:00",
+            "time": "2025-07-25T11:09:52+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -110,7 +110,7 @@
             ],
             "support": {
                 "issues": "https://github.com/papesembene/RouterDependency/issues",
-                "source": "https://github.com/papesembene/RouterDependency/tree/v1.0.1"
+                "source": "https://github.com/papesembene/RouterDependency/tree/v1.1.0"
             },
             "install-path": "../mrsems/router-php"
         },

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5c6677f836ac2d0b0b3ad4a0f137a10",
+    "content-hash": "c2e206c8cf4d97367cf4099c187c7442",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -70,16 +70,16 @@
         },
         {
             "name": "mrsems/router-php",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/papesembene/RouterDependency.git",
-                "reference": "8ff58ab560f9ce9b8fb9bfd091f525cdee2e9b29"
+                "reference": "84ac4760c776cb4d46d0a7e4c8260e93b007fe3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/papesembene/RouterDependency/zipball/8ff58ab560f9ce9b8fb9bfd091f525cdee2e9b29",
-                "reference": "8ff58ab560f9ce9b8fb9bfd091f525cdee2e9b29",
+                "url": "https://api.github.com/repos/papesembene/RouterDependency/zipball/84ac4760c776cb4d46d0a7e4c8260e93b007fe3b",
+                "reference": "84ac4760c776cb4d46d0a7e4c8260e93b007fe3b",
                 "shasum": ""
             },
             "require": {
@@ -110,9 +110,9 @@
             ],
             "support": {
                 "issues": "https://github.com/papesembene/RouterDependency/issues",
-                "source": "https://github.com/papesembene/RouterDependency/tree/v1.0.1"
+                "source": "https://github.com/papesembene/RouterDependency/tree/v1.1.0"
             },
-            "time": "2025-07-21T22:44:56+00:00"
+            "time": "2025-07-25T11:09:52+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -518,9 +518,11 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {},
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": {},
+    "platform": {
+        "php": ">=8.0"
+    },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
