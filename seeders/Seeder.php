@@ -3,8 +3,8 @@ namespace App\Seeders;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\Core\Database;
+use App\Enums\SuccessEnum;
 use App\Src\Enums\ErrorEnum;
-use App\Src\Enums\SuccessEnum;
 
 class Seeder
 {

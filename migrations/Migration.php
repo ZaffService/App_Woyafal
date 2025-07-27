@@ -6,7 +6,7 @@ use PDO;
 use App\Core\Database;
 use App\Src\Enums\ErrorEnum;
 use App\Src\Enums\TextEnum;
-use App\Src\Enums\SuccessEnum;
+use App\Enums\SuccessEnum;
 
 class Migration
 {

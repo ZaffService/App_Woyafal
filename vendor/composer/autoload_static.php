@@ -34,6 +34,7 @@ class ComposerStaticInitd5c6677f836ac2d0b0b3ad4a0f137a10
         'A' => 
         array (
             'App\\Router\\' => 11,
+            'App\\Core\\' => 9,
             'App\\' => 4,
         ),
     );
@@ -67,10 +68,13 @@ class ComposerStaticInitd5c6677f836ac2d0b0b3ad4a0f137a10
         array (
             0 => __DIR__ . '/..' . '/mrsems/router-php/src',
         ),
+        'App\\Core\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/App/Core',
+        ),
         'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/App',
-            1 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 

@@ -1,14 +1,14 @@
 <?php
 namespace App\Services;
 
-use App\Repositories\CompteurRepository;
-use App\Repositories\ClientRepository;
-use App\Repositories\AchatRepository;
-use App\Repositories\JournalRepository;
+use App\Enums\SuccessEnum;
+use App\Src\Enums\ErrorEnum;
 use App\Entities\AchatEntity;
 use App\Entities\JournalEntity;
-use App\Src\Enums\ErrorEnum;
-use App\Src\Enums\SuccessEnum;
+use App\Repositories\AchatRepository;
+use App\Repositories\ClientRepository;
+use App\Repositories\JournalRepository;
+use App\Repositories\CompteurRepository;
 
 class WoyofalService
 {

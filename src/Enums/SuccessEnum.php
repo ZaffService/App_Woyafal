@@ -1,5 +1,5 @@
 <?php
-namespace App\Src\Enums;
+namespace App\Enums;
 
 enum SuccessEnum:string {
     case MIGRATION_SUCCESS = 'Les migrations ont été exécutées avec succès dans la base';
