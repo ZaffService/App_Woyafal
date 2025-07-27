@@ -80,3 +80,15 @@ try {
         'trace' => $e->getTraceAsString() // Ajoute ceci pour voir la source exacte
     ], JSON_UNESCAPED_UNICODE);
 }
+
+if (isset($_GET['run_migration']) && $_GET['run_migration'] === 'secret') {
+    require_once __DIR__ . '/../migration.php'; // adapte le chemin si besoin
+    echo "Migration exécutée";
+    exit;
+}
+
+if (isset($_GET['run_seeder']) && $_GET['run_seeder'] === 'secret') {
+    require_once __DIR__ . '/../seeder.php'; // adapte le chemin si besoin
+    echo "Seeder exécuté";
+    exit;
+}
