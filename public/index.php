@@ -12,13 +12,6 @@ if (isset($_GET['run_migration']) && $_GET['run_migration'] === 'secret') {
     exit;
 }
 
-if (isset($_GET['run_seeder']) && $_GET['run_seeder'] === 'secret') {
-    require_once __DIR__ . '/../seeders/Seeder.php';
-    (new \App\Seeders\Seeder())->run();
-    echo "Seeder exécuté";
-    exit;
-}
-
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();

@@ -16,75 +16,22 @@ class Migration
     public function __construct()
     {
         $this->database = Database::getInstance();
+        $this->dbName = getenv('DB_NAME') ?: $_ENV['DB_NAME'] ?? 'woyafal';
+        $this->database->setDatabaseName($this->dbName);
     }
 
     public function run(): void
     {
         echo "--- Lancement de la migration AppWoyofal ---\n\n";
-        
-        $this->handleDatabaseCreation();
         $this->migrateTables();
-        
         echo "\n--- Migration terminée avec succès ---\n";
         echo "Vous pouvez maintenant exécuter le seeder avec : php seeders/Seeder.php\n\n";
-    }
-
-    private function handleDatabaseCreation(): void
-    {
-        $reponse = strtolower(trim(readline(TextEnum::QUESTION_BASE_EXISTANTE->value)));
-
-        if ($reponse === 'oui' || $reponse === 'o') {
-            $this->dbName = trim(readline(TextEnum::QUESTION_NOM_BASE->value));
-            $this->checkDatabaseExists();
-        } else {
-            $this->dbName = trim(readline(TextEnum::READLINE_NOM_NEW_BASE->value));
-            $this->createDatabase();
-        }
-
-        $this->database->setDatabaseName($this->dbName);
-    }
-
-    private function checkDatabaseExists(): void
-    {
-        $pdo = $this->database->getServerConnection();
-        
-        try {
-            $stmt = $pdo->prepare("SELECT 1 FROM pg_database WHERE datname = ?");
-            $stmt->execute([$this->dbName]);
-            
-            if (!$stmt->fetch()) {
-                echo "La base de données '{$this->dbName}' n'existe pas.\n";
-                $create = strtolower(trim(readline("Voulez-vous la créer ? (oui/non): ")));
-                
-                if ($create === 'oui' || $create === 'o') {
-                    $this->createDatabase();
-                } else {
-                    exit("Migration annulée.\n");
-                }
-            } else {
-                echo "Base de données '{$this->dbName}' trouvée.\n";
-            }
-        } catch (\PDOException $e) {
-            exit(ErrorEnum::ECHEC_CONNEXION->value . $e->getMessage() . "\n");
-        }
-    }
-
-    private function createDatabase(): void
-    {
-        $pdo = $this->database->getServerConnection();
-        
-        try {
-            $pdo->exec("CREATE DATABASE \"{$this->dbName}\"");
-            echo SuccessEnum::SUCCESS_CREATE_DATABASE->value . " '{$this->dbName}'.\n";
-        } catch (\PDOException $e) {
-            exit(ErrorEnum::ECHEC_CREATE_DATABASE->value . $e->getMessage() . "\n");
-        }
     }
 
     private function migrateTables(): void
     {
         $pdo = $this->database->getConnection();
-        
+
         try {
             echo "Création des tables...\n";
             $this->createClientsTable($pdo);
