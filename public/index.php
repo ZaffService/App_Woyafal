@@ -4,6 +4,21 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 header('Content-Type: application/json');
 
+// Place ce bloc ici, tout de suite après les headers !
+if (isset($_GET['run_migration']) && $_GET['run_migration'] === 'secret') {
+    require_once __DIR__ . '/../migrations/Migration.php';
+    (new \App\Migrations\Migration())->run();
+    echo "Migration exécutée";
+    exit;
+}
+
+if (isset($_GET['run_seeder']) && $_GET['run_seeder'] === 'secret') {
+    require_once __DIR__ . '/../seeders/Seeder.php';
+    (new \App\Seeders\Seeder())->run();
+    echo "Seeder exécuté";
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
@@ -79,17 +94,4 @@ try {
         'message' => 'Erreur serveur: ' . $e->getMessage(),
         'trace' => $e->getTraceAsString() // Ajoute ceci pour voir la source exacte
     ], JSON_UNESCAPED_UNICODE);
-}
-
-if (isset($_GET['run_migration']) && $_GET['run_migration'] === 'secret') {
-    require_once __DIR__ . '/../migrations/Migration.php';
-    (new \App\Migrations\Migration())->run();
-    echo "Migration exécutée";
-    exit;
-}
-
-if (isset($_GET['run_seeder']) && $_GET['run_seeder'] === 'secret') {
-    require_once __DIR__ . '/../seeders/Seeder.php';
-    echo "Seeder exécuté";
-    exit;
 }
