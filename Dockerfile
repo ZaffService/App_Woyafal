@@ -1,15 +1,18 @@
-FROM php:8.2-cli
+FROM php:8.2-fpm
 
 # Installer les extensions nécessaires
 RUN apt-get update && apt-get install -y \
     libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql
 
-WORKDIR /app
+# Installer Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+WORKDIR /var/www/html
 
 COPY . .
 
-RUN php composer.phar install --no-interaction --no-dev --optimize-autoloader || composer install --no-interaction --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader
 
 EXPOSE 8080
 
