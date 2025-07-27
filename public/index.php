@@ -82,7 +82,8 @@ try {
 }
 
 if (isset($_GET['run_migration']) && $_GET['run_migration'] === 'secret') {
-    require_once __DIR__ . '/../migration.php'; // adapte le chemin si besoin
+    require_once __DIR__ . '/../migrations/Migration.php';
+    (new \App\Migrations\Migration())->run();
     echo "Migration exécutée";
     exit;
 }
